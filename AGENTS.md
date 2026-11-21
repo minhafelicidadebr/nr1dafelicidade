@@ -32,4 +32,5 @@ use the editor.
 ## Migrated app rules
 - Pages under `src/pages` use `@/lib/router/compat` (react-router-style API over TanStack Router); route files in `src/routes` only wrap pages. Why: the app was migrated from react-router without rewriting 40+ call sites.
 - App data access goes through `@/lib/runtime/appSupabaseClient`, never the generated client directly. Why: it enforces the runtime data gate (synthetic mode blocks real data until governance approval).
-- The layout renders inside `<ClientOnly>` with `defaultSsr: false`. Why: pages read localStorage/theme during render.
+- The layout renders inside `<ClientOnly>` with `defaultSsr: false` (src/start.ts). Why: pages read localStorage/theme during render.
+- tsconfig strictness matches the original project (strict off, strictNullChecks on); files with inherited type errors carry @ts-nocheck. Why: the source code was written without strict mode.

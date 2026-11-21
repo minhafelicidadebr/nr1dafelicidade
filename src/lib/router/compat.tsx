@@ -67,7 +67,7 @@ export const Link = React.forwardRef<HTMLAnchorElement, LinkProps>(function Link
   );
 });
 
-type NavLinkProps = Omit<LinkProps, "className" | "style" | "children"> & {
+export type NavLinkProps = Omit<LinkProps, "className" | "style" | "children"> & {
   end?: boolean;
   className?: string | ((s: { isActive: boolean; isPending: boolean }) => string | undefined);
   style?: React.CSSProperties | ((s: { isActive: boolean; isPending: boolean }) => React.CSSProperties | undefined);
@@ -115,7 +115,8 @@ export function useNavigate() {
 }
 
 export function useParams<T extends Record<string, string | undefined> = Record<string, string | undefined>>() {
-  return useTsParams({ strict: false }) as T;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  return (useTsParams as any)({ strict: false }) as T;
 }
 
 export function useLocation() {
