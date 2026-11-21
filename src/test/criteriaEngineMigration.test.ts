@@ -1,0 +1,13 @@
+import{readFileSync}from"node:fs";import{resolve}from"node:path";import{describe,expect,it}from"vitest";
+const migration=readFileSync(resolve("supabase/migrations/20260623063000_contextual_criteria_engine_g2.sql"),"utf8");
+describe("contextual criteria engine migration",()=>{
+ it.each(["criteria_versions","criteria_approvals","criteria_review_events","contextual_risk_assessments","risk_override_events","contextual_risk_review_events"])("keeps %s service-only",table=>expect(migration).toMatch(new RegExp(`REVOKE ALL[\\s\\S]*${table}[\\s\\S]*FROM PUBLIC,anon,authenticated`)));
+ it("registers only an unapproved draft",()=>{expect(migration).toContain("'criteria-g2-2026.06-draft','draft'");expect(migration).toContain("criteria_version_not_approved");});
+ it("requires independent SST and methodology approvals",()=>{expect(migration).toContain("discipline IN('sst','methodology')");expect(migration).toContain("criteria_independent_approvals_missing");});
+ it("uses contextual severity and exposure inputs",()=>{expect(migration).toContain("credible_consequence");expect(migration).toContain("vulnerability_aggravation");expect(migration).toContain("exposure,intensity");expect(migration).toContain("exposure,frequency");});
+ it("does not reduce risk for a control without efficacy evidence",()=>{expect(migration).toContain("minimum_control_confidence");expect(migration).toContain("evidence_ref");expect(migration).toContain("implemented");expect(migration).toContain("maintained");});
+ it("records immutable technical overrides",()=>{expect(migration).toContain("risk_override_append_only");expect(migration).toContain("contextual_risk_override_evidence_missing");expect(migration).toContain("technical_override_applied");});
+ it("freezes reproducible snapshots under independent review",()=>{expect(migration).toContain("contextual_risk_snapshot_is_immutable");expect(migration).toContain("contextual_risk_hash_mismatch");expect(migration).toContain("contextual_risk_independent_reviewer_missing");});
+ it("materializes only an approved contextual assessment",()=>{expect(migration).toContain("contextual_risk_not_approved");expect(migration).toContain("contextual_risk_assessment_id uuid REFERENCES");});
+ it("disables the legacy percentage/catalog calculation",()=>{expect(migration).toContain("legacy_risk_computation_disabled_use_contextual_criteria_engine");expect(migration).toContain("REVOKE ALL ON FUNCTION public.compute_cycle_risk(uuid)FROM PUBLIC,anon,authenticated");const page=readFileSync(resolve("src/pages/app/RiskPage.tsx"),"utf8");expect(page).not.toContain('supabase.rpc("compute_cycle_risk"');expect(page).not.toContain("Probabilidade vem do %");expect(page).not.toContain("Severidade vem do catálogo");});
+});

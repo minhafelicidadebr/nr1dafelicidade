@@ -1,0 +1,89 @@
+{
+  "manifestId": "onda-0r-release-truth-scope",
+  "version": "2026-07-16.1-post-merge-truth",
+  "observedAt": "2026-07-16",
+  "expected": {
+    "totalFiles": 22,
+    "trackedModified": 15,
+    "untrackedFiles": 7,
+    "categories": {
+      "docs": 7,
+      "source": 14,
+      "e2e": 0,
+      "tooling": 0,
+      "other": 1
+    }
+  },
+  "security": {
+    "allowedReviewSensitivePaths": [],
+    "allowedGovernedPaths": []
+  },
+  "contentHash": {
+    "algorithm": "sha256-path-null-file-sha256-v1",
+    "excludePaths": [
+      "docs/G1_PR_SCOPE_AUDIT.md",
+      "docs/release/G1_PR_SCOPE_MANIFEST.json"
+    ]
+  },
+  "reviewBudget": {
+    "excludePaths": [
+      "docs/G1_PR_SCOPE_AUDIT.md",
+      "docs/release/G1_PR_SCOPE_MANIFEST.json",
+      "docs/release/ONDA_0R_RELEASE_SCOPE_MANIFEST.json"
+    ]
+  },
+  "workstreams": [
+    {
+      "key": "foundation_and_claims",
+      "paths": [
+        "src/components/governance/ReleaseProofPacketCard.test.tsx",
+        "src/components/governance/ReleaseProofPacketCard.tsx"
+      ]
+    },
+    {
+      "key": "commercial_readiness",
+      "paths": [
+        "docs/SAAS_MATURITY_ASSESSMENT.md",
+        "src/data/saasMaturityAssessment.ts",
+        "src/lib/governance/saasMaturity.test.ts"
+      ]
+    },
+    {
+      "key": "methodology_and_instruments",
+      "paths": [
+        "src/data/g1ReleaseEvidenceManifest.ts",
+        "src/test/releaseEvidenceManifestDrift.test.ts"
+      ]
+    },
+    {
+      "key": "synthetic_operation",
+      "paths": [
+        "src/data/releaseSyncReadiness.ts",
+        "src/lib/release/syncReadiness.test.ts"
+      ]
+    },
+    {
+      "key": "external_governance",
+      "paths": [
+        "src/pages/app/DashboardPage.tsx",
+        "src/pages/app/ExternalReadinessWorkspacePage.tsx"
+      ]
+    },
+    {
+      "key": "release_governance",
+      "paths": [
+        "docs/G1_PR_SCOPE_AUDIT.md",
+        "docs/G1_RELEASE_PROOF_PACKET.md",
+        "docs/RELEASE_EVIDENCE_CONTROL_PLANE_G0.md",
+        "docs/release/G1_PR_SCOPE_MANIFEST.json",
+        "docs/release/G1_RELEASE_EVIDENCE_MANIFEST.json",
+        "docs/release/ONDA_0R_RELEASE_SCOPE_MANIFEST.json",
+        "src/data/g1ReleaseProofPacket.ts",
+        "src/lib/release/releaseEvidenceManifest.test.ts",
+        "src/lib/release/releaseEvidenceManifest.ts",
+        "src/lib/release/releaseProofPacket.test.ts",
+        "tsconfig.app.json"
+      ]
+    }
+  ]
+}

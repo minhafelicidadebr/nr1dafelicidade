@@ -1,0 +1,118 @@
+import {
+  evaluateReleaseReviewPlan,
+  type ReleaseReviewPlanContext,
+  type ReleaseReviewPlanInput,
+  type ReleaseReviewPlanPolicy,
+} from "@/lib/release/releaseReviewPlan";
+
+export const g1ReleaseReviewPlanPolicy: ReleaseReviewPlanPolicy = Object.freeze({
+  policyId: "g1-release-review-plan-2026-07-14",
+  requiredWorkstreamKeys: [
+    "foundation_and_claims",
+    "commercial_readiness",
+    "methodology_and_instruments",
+    "synthetic_operation",
+    "external_governance",
+    "release_governance",
+  ] as const,
+  requireReviewerRoles: true,
+  requireExitCriteria: true,
+  requireValidationCommands: true,
+  prohibitCommit: true,
+  prohibitPullRequest: true,
+  prohibitMerge: true,
+  prohibitDeploy: true,
+  prohibitGateAdvance: true,
+  prohibitRealData: true,
+});
+
+export const g1ReleaseReviewPlanContext: ReleaseReviewPlanContext = Object.freeze({
+  reviewAuthorized: false,
+  reviewStarted: false,
+  commitCreated: false,
+  pullRequestOpened: false,
+  mergePerformed: false,
+  deployPerformed: false,
+  gateAdvanceClaimed: false,
+  realDataEnabled: false,
+});
+
+export const g1ReleaseReviewPlan: ReleaseReviewPlanInput = {
+  planId: "g1-release-review-sequence",
+  version: "2026-07-14.1-planned",
+  observedAt: "2026-07-14",
+  stages: [
+    {
+      key: "foundation_review",
+      label: "Fundação e claims",
+      workstreamKey: "foundation_and_claims",
+      sequence: 1,
+      dependencies: [],
+      reviewerRoles: ["Engenharia", "Produto e claims"],
+      exitCriteria: ["Runtime sintético preservado", "Claims públicos compatíveis com o implementado"],
+      validationCommands: ["npm test -- --run src/test/publicClaimsGuardrail.test.ts", "npm run typecheck"],
+      status: "planned",
+    },
+    {
+      key: "methodology_review",
+      label: "Metodologia e instrumentos",
+      workstreamKey: "methodology_and_instruments",
+      sequence: 2,
+      dependencies: ["foundation_review"],
+      reviewerRoles: ["Metodologia/Psicometria", "SST"],
+      exitCriteria: ["Proveniência e lacunas visíveis", "Nenhuma aprovação metodológica inferida"],
+      validationCommands: ["npm test -- --run src/lib/instruments"],
+      status: "planned",
+    },
+    {
+      key: "commercial_review",
+      label: "Prontidão comercial",
+      workstreamKey: "commercial_readiness",
+      sequence: 3,
+      dependencies: ["foundation_review"],
+      reviewerRoles: ["Produto", "Jurídico/Comercial"],
+      exitCriteria: ["Oferta permanece vendor-neutral", "Sem promessa de conformidade ou operação real"],
+      validationCommands: ["npm test -- --run src/lib/commercial"],
+      status: "planned",
+    },
+    {
+      key: "synthetic_operation_review",
+      label: "Operação sintética",
+      workstreamKey: "synthetic_operation",
+      sequence: 4,
+      dependencies: ["foundation_review", "methodology_review"],
+      reviewerRoles: ["QA", "Produto", "SST"],
+      exitCriteria: ["Cenários determinísticos", "Nenhuma audiência ou dado real"],
+      validationCommands: ["npm test -- --run src/lib/instruments/syntheticDemoReceipt.test.ts src/lib/instruments/syntheticScenarios.test.ts"],
+      status: "planned",
+    },
+    {
+      key: "external_governance_review",
+      label: "Governança externa",
+      workstreamKey: "external_governance",
+      sequence: 5,
+      dependencies: ["commercial_review", "synthetic_operation_review"],
+      reviewerRoles: ["SST", "Privacidade/Segurança", "Produto"],
+      exitCriteria: ["Decision Room permanece No-Go", "Accountability não nominativa e sem aprovação implícita"],
+      validationCommands: ["npm test -- --run src/lib/governance src/pages/app/ExternalReadinessWorkspacePage.test.tsx"],
+      status: "planned",
+    },
+    {
+      key: "release_review",
+      label: "Candidato e release",
+      workstreamKey: "release_governance",
+      sequence: 6,
+      dependencies: ["external_governance_review"],
+      reviewerRoles: ["Maintainer", "Segurança", "Revisor independente"],
+      exitCriteria: ["Escopo aceito ou dividido explicitamente", "Repositório oficial decidido antes de qualquer SHA"],
+      validationCommands: ["npm test", "npm run lint", "npm run typecheck", "npm run build", "npm run check:bundle"],
+      status: "planned",
+    },
+  ],
+};
+
+export const g1ReleaseReviewPlanSummary = evaluateReleaseReviewPlan(
+  g1ReleaseReviewPlan,
+  g1ReleaseReviewPlanContext,
+  g1ReleaseReviewPlanPolicy,
+);

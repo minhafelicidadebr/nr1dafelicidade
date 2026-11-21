@@ -1,0 +1,14 @@
+{
+  "schema": "explicit-any-baseline/v1",
+  "scope": "src/**/*.ts,src/**/*.tsx",
+  "observedAt": "2026-07-18",
+  "policy": "Cada arquivo pode reduzir seu total de any explícito, mas não aumentá-lo; novos arquivos com any explícito falham no CI.",
+  "counts": {
+    "src/pages/app/CyclesPage.tsx": 2,
+    "src/pages/app/DashboardPage.tsx": 1,
+    "src/pages/app/EstrategiaPage.tsx": 1,
+    "src/pages/app/UnitsPage.tsx": 3,
+    "src/pages/AuthPage.tsx": 1,
+    "src/pages/RespondPage.tsx": 2
+  }
+}

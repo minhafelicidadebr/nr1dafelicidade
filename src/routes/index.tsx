@@ -1,23 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
+import HomePage from "@/pages/HomePage";
 
-// The home route ships no og:image, so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
-  component: Index,
+  head: () => ({
+    meta: [
+      { title: "Playbook NR-1 | Demonstração sintética de evidências e ações" },
+      { name: "description", content: "Demonstração sintética para organizar evidências, contexto do trabalho e planos de ação de riscos psicossociais (NR-1)." },
+      { property: "og:title", content: "Playbook NR-1 | Demonstração sintética de evidências e ações" },
+      { property: "og:description", content: "Demonstração sintética para organizar evidências, contexto do trabalho e planos de ação de riscos psicossociais (NR-1)." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/8fc4c1d8-8931-435e-bcd6-c327921950f2" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/8fc4c1d8-8931-435e-bcd6-c327921950f2" },
+    ],
+  }),
+  component: HomePage,
 });
-
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
-}

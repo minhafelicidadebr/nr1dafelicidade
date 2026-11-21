@@ -1,0 +1,56 @@
+// App data client: wraps every request in the runtime data gate (synthetic vs real mode).
+import { createClient } from '@supabase/supabase-js';
+import type { Database } from '@/lib/runtime/databaseTypes';
+import {
+  evaluateSupabaseRuntimeAvailability,
+  resolveSupabaseRuntimeConfig,
+} from '@/lib/runtime/supabaseConfig';
+import { currentDataGateStatus, dataFetch } from '@/lib/runtime/dataGate';
+
+export const supabaseRuntimeConfig = resolveSupabaseRuntimeConfig(import.meta.env);
+export const supabaseRuntimeAvailability = evaluateSupabaseRuntimeAvailability(
+  supabaseRuntimeConfig,
+  currentDataGateStatus,
+);
+
+const SUPABASE_URL = supabaseRuntimeConfig.url;
+const SUPABASE_PUBLISHABLE_KEY = supabaseRuntimeConfig.publishableKey;
+
+
+function isNewSupabaseApiKey(value: string): boolean {
+  return value.startsWith('sb_publishable_');
+}
+
+function createSupabaseFetch(supabaseKey: string): typeof fetch {
+  return (input, init) => {
+    const headers = new Headers(
+      typeof Request !== 'undefined' && input instanceof Request ? input.headers : undefined,
+    );
+
+    if (init?.headers) {
+      new Headers(init.headers).forEach((value, key) => headers.set(key, value));
+    }
+
+    // New Supabase API keys are opaque strings, not bearer JWTs.
+    if (isNewSupabaseApiKey(supabaseKey) && headers.get('Authorization') === `Bearer ${supabaseKey}`) {
+      headers.delete('Authorization');
+    }
+
+    headers.set('apikey', supabaseKey);
+    return dataFetch(input, { ...init, headers });
+  };
+}
+
+// Import the supabase client like this:
+// import { supabase } from "@/lib/runtime/appSupabaseClient";
+
+export const supabase = createClient<Database>(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, {
+  global: {
+    fetch: createSupabaseFetch(SUPABASE_PUBLISHABLE_KEY),
+  },
+  auth: {
+    storage: typeof window !== 'undefined' ? window.localStorage : undefined,
+    persistSession: typeof window !== 'undefined',
+    autoRefreshToken: true,
+  }
+});

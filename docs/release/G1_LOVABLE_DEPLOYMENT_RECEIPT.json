@@ -1,0 +1,33 @@
+{
+  "receiptId": "g1-lovable-deployment-2026-07-20-4a21c1c",
+  "version": "2026-07-20.1",
+  "observedAt": "2026-07-20T14:19:45Z",
+  "projectId": "79e57053-adad-43fa-bb52-3e25ce21dbff",
+  "repository": "minhafelicidadebr/playbook-nr1-chagpt-sol",
+  "branch": "main",
+  "releaseRef": "4a21c1c7eb9f756a216553fd5237809e588f90d9",
+  "deployment": {
+    "id": "1189b130-3df2-4f61-a7c3-7e0e7baca7c9",
+    "idSource": "x-deployment-id",
+    "publicUrl": "https://playbook-nr1-chagpt-sol.lovable.app/",
+    "httpStatus": 200,
+    "entryAsset": "/assets/index-Bbv8MfGR.js",
+    "salesAsset": "/assets/SalesPage-paPN8gWn.js",
+    "releaseMarker": "DEMONSTRA\u00c7\u00c3O SINT\u00c9TICA EM VALIDA\u00c7\u00c3O",
+    "releaseMarkerPresent": true
+  },
+  "smoke": {
+    "desktop": "passed",
+    "mobile": "passed",
+    "runtimeErrors": 0,
+    "finalPath": "/planos#lead-form"
+  },
+  "boundaries": {
+    "approvedGate": "G0",
+    "targetGate": "G1",
+    "g1Approved": false,
+    "gateAdvanceClaimed": false,
+    "realDataEnabled": false,
+    "billing": "sandbox_only"
+  }
+}

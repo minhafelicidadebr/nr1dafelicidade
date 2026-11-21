@@ -1,0 +1,12 @@
+[
+ {"capability":"code","source":"Vite + React Router SPA (34 pages)","outcome":"migrate","status":"verified","next_action":"none"},
+ {"capability":"routes","source":"react-router route table","outcome":"TanStack file routes + compat layer","status":"verified","next_action":"none"},
+ {"capability":"design system","source":"Tailwind v3 HSL tokens","outcome":"ported to Tailwind v4","status":"verified","next_action":"none"},
+ {"capability":"synthetic data mode","source":"runtime data gate (G0, real data blocked)","outcome":"preserved","status":"verified","next_action":"none"},
+ {"capability":"schema","source":"36 Supabase migrations (~70 tables)","outcome":"migrate","status":"pending","next_action":"Apply to Lovable Cloud once user confirms (only used in real-data mode)"},
+ {"capability":"records","source":"Supabase project","outcome":"migrate","status":"pending","next_action":"Request CSV/JSON exports"},
+ {"capability":"auth identities","source":"Supabase auth","outcome":"migrate","status":"pending","next_action":"Request user export; enable email auth with schema"},
+ {"capability":"AI functions","source":"driver-chat, driver-dynamic, estrategia-chat, strategia-rewrite, nexo, generate-document, generate-pdf","outcome":"kept as backend functions (LOVABLE_API_KEY)","status":"pending","next_action":"Verify after schema applied"},
+ {"capability":"Mercado Pago","source":"create-subscription + webhook","outcome":"preserve","status":"pending","next_action":"Request MP_ACCESS_TOKEN_TEST and MP_WEBHOOK_SECRET_TEST; update webhook URL"},
+ {"capability":"assets","source":"src/assets, public/assets","outcome":"copied","status":"verified","next_action":"none"}
+]

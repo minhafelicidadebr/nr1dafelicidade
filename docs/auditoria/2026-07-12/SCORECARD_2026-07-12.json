@@ -1,0 +1,144 @@
+{
+  "app": "kiro-playbook-nr1-julho-main",
+  "date": "2026-07-12",
+  "vertical": "NR-1/GRO-PGR/LGPD",
+  "score_global_ponderado": 7.2839,
+  "confidence": "medium-high",
+  "commercial_readiness": {
+    "stage": "advanced demonstrable prototype / synthetic MVP foundation",
+    "decision": "GO_CONDITIONAL_DISCOVERY_AND_SYNTHETIC_DEMO",
+    "real_data": "NO_GO",
+    "paid_operational_pilot": "NO_GO"
+  },
+  "verification": {
+    "npm_ci": "pass",
+    "lint": "pass",
+    "typecheck": "pass",
+    "build": "pass",
+    "bundle_budget": "pass",
+    "npm_audit": "pass_0_vulnerabilities",
+    "test_files_individual": {
+      "pass": 44,
+      "total": 44
+    },
+    "aggregate_test": "did_not_terminate_in_audit_environment",
+    "browser_e2e": "not_verified",
+    "database_pgtap": "not_verified"
+  },
+  "lenses": [
+    {
+      "n": 1,
+      "lente": "Técnica / Engenharia de software",
+      "nota": 8.0,
+      "peso": 1.5,
+      "confianca": "Alta",
+      "evidencia": "E2"
+    },
+    {
+      "n": 2,
+      "lente": "Maturidade SaaS & plataforma",
+      "nota": 6.4,
+      "peso": 1.5,
+      "confianca": "Alta",
+      "evidencia": "E2"
+    },
+    {
+      "n": 3,
+      "lente": "Modelo de negócio",
+      "nota": 6.4,
+      "peso": 1.5,
+      "confianca": "Média-alta",
+      "evidencia": "E1/E2"
+    },
+    {
+      "n": 4,
+      "lente": "Narrativa & marca",
+      "nota": 7.5,
+      "peso": 1.0,
+      "confianca": "Alta",
+      "evidencia": "E1"
+    },
+    {
+      "n": 5,
+      "lente": "UX",
+      "nota": 7.8,
+      "peso": 1.0,
+      "confianca": "Média",
+      "evidencia": "E1/E2"
+    },
+    {
+      "n": 6,
+      "lente": "IX (design de interação)",
+      "nota": 7.5,
+      "peso": 1.0,
+      "confianca": "Média",
+      "evidencia": "E1"
+    },
+    {
+      "n": 7,
+      "lente": "Design visual / sistema",
+      "nota": 8.2,
+      "peso": 1.0,
+      "confianca": "Média-alta",
+      "evidencia": "E1/E2"
+    },
+    {
+      "n": 8,
+      "lente": "Usabilidade & acessibilidade",
+      "nota": 7.1,
+      "peso": 1.0,
+      "confianca": "Média",
+      "evidencia": "E1/E2"
+    },
+    {
+      "n": 9,
+      "lente": "Marketing digital & CRO",
+      "nota": 6.2,
+      "peso": 1.5,
+      "confianca": "Alta",
+      "evidencia": "E1/E2"
+    },
+    {
+      "n": 10,
+      "lente": "Inovação tecnológica & IA",
+      "nota": 7.3,
+      "peso": 1.0,
+      "confianca": "Média-alta",
+      "evidencia": "E1/E2"
+    },
+    {
+      "n": 11,
+      "lente": "Inovação educacional",
+      "nota": 7.6,
+      "peso": 1.0,
+      "confianca": "Média",
+      "evidencia": "E1"
+    },
+    {
+      "n": 12,
+      "lente": "Criatividade",
+      "nota": 8.6,
+      "peso": 1.0,
+      "confianca": "Média-alta",
+      "evidencia": "E1"
+    },
+    {
+      "n": 13,
+      "lente": "Vertical regulatória — NR-1/LGPD",
+      "nota": 7.2,
+      "peso": 1.5,
+      "confianca": "Alta",
+      "evidencia": "E1/E2"
+    }
+  ],
+  "critical_gates": [
+    "canonical methodology package",
+    "formal accountables",
+    "LGPD/legal decisions and DPA",
+    "remote governed CRM/lead intake",
+    "browser E2E and accessibility",
+    "incident response and disaster recovery",
+    "observability and SLO",
+    "G3 formal approval for real data"
+  ]
+}

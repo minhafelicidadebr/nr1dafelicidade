@@ -1,0 +1,192 @@
+{
+  "manifestId": "g1-pr-scope-manifest",
+  "version": "2026-08-11.1-action-command-g0",
+  "observedAt": "2026-08-11",
+  "scopeMode": "standalone",
+  "comparison": {
+    "baseCommit": "800a64b393a2d66f5b1316e9354459100ab2ac2f"
+  },
+  "expected": {
+    "totalFiles": 98,
+    "trackedModified": 98,
+    "untrackedFiles": 0,
+    "changeTypes": {
+      "added": 29,
+      "modified": 67,
+      "deleted": 2
+    },
+    "categories": {
+      "docs": 21,
+      "source": 64,
+      "e2e": 1,
+      "tooling": 3,
+      "other": 9
+    }
+  },
+  "allowedDeletedPaths": [
+    "bun.lock",
+    "bun.lockb"
+  ],
+  "security": {
+    "allowedReviewSensitivePaths": [
+      ".github/workflows/ci.yml",
+      "package.json",
+      "package-lock.json"
+    ],
+    "allowedGovernedPaths": [
+      "supabase/functions/generate-document/index.ts",
+      "supabase/migrations/20260720120000_document_version_concurrency_g1.sql",
+      "supabase/tests/document_versioning_contract.sql"
+    ]
+  },
+  "contentHash": {
+    "algorithm": "sha256-path-null-file-sha256-v1",
+    "excludePaths": [
+      "docs/release/G1_PR_SCOPE_MANIFEST.json",
+      "bun.lock",
+      "bun.lockb"
+    ]
+  },
+  "reviewBudget": {
+    "excludePaths": [
+      "docs/release/G1_PR_SCOPE_MANIFEST.json",
+      "bun.lock",
+      "bun.lockb"
+    ]
+  },
+  "workstreams": [
+    {
+      "key": "foundation_and_claims",
+      "paths": [
+        "src/pages/HomePage.tsx",
+        "src/pages/SalesPage.tsx",
+        "src/test/publicClaimsGuardrail.test.ts",
+        "src/components/sales/ReadinessGovernanceSprintCard.test.tsx",
+        "src/components/sales/ReadinessGovernanceSprintCard.tsx"
+      ]
+    },
+    {
+      "key": "commercial_readiness",
+      "paths": [
+        "e2e/public-lead-intake.spec.ts",
+        "src/components/sales/LeadCaptureForm.tsx",
+        "src/components/governance/PaidAdvisoryAuthorizationCard.test.tsx",
+        "src/components/governance/PaidAdvisoryAuthorizationCard.tsx",
+        "src/components/governance/PaidAdvisoryLaunchRehearsalCard.test.tsx",
+        "src/components/governance/PaidAdvisoryLaunchRehearsalCard.tsx",
+        "src/data/commercialAuthorization.ts",
+        "src/data/g1PaidAdvisoryLaunchRehearsal.ts",
+        "src/lib/commercial/commercialAuthorization.test.ts",
+        "src/lib/commercial/commercialAuthorization.ts",
+        "src/lib/commercial/paidAdvisoryLaunchRehearsal.test.ts",
+        "src/pages/app/ExternalReadinessWorkspacePage.tsx",
+        "docs/G1_PAID_SERVICE_AUTHORIZATION.md",
+        "docs/READINESS_GOVERNANCE_SPRINT_LEGAL_REVIEW_CHECKLIST.md",
+        "docs/READINESS_GOVERNANCE_SPRINT_TERMS_DRAFT.md",
+        "docs/execution/CURRENT_STATE.md",
+        "docs/execution/DECISIONS_LEDGER.md",
+        "docs/execution/EVIDENCE_LEDGER.md",
+        "docs/execution/INSTITUTIONAL_AUTHORIZATION_INPUT.md",
+        "docs/execution/PROPOSED_ROLES_AND_PRICING.md",
+        "docs/execution/WAVE_0_REPORT.md",
+        "docs/execution/INSTITUTIONAL_DECISION_PACKET_DRAFT.md",
+        "docs/execution/WAVE_PLAN.md"
+      ]
+    },
+    {
+      "key": "methodology_and_instruments",
+      "paths": [
+        "src/pages/app/DocumentsPage.tsx",
+        "src/test/documentVersioningMigration.test.ts"
+      ]
+    },
+    {
+      "key": "synthetic_operation",
+      "paths": [
+        "src/components/PDFGenerator.tsx",
+        "src/test/mercadoPagoEdgeContract.test.ts"
+      ]
+    },
+    {
+      "key": "external_governance",
+      "paths": [
+        "supabase/functions/generate-document/index.ts",
+        "supabase/migrations/20260720120000_document_version_concurrency_g1.sql",
+        "supabase/tests/document_versioning_contract.sql"
+      ]
+    },
+    {
+      "key": "execution_core_mvp",
+      "paths": [
+        "docs/NR1_MVP_EXECUTION_WAVES_TOT_2026.md",
+        "docs/execution/ADR_NR1_EXECUTION_CORE_MVP.md",
+        "docs/execution/NR1_MVP_REQUIREMENTS_TRACEABILITY_2026.md",
+        "docs/execution/NR1_MVP_RPC_RLS_CONTRACT_G0.md",
+        "docs/execution/NR1_MVP_STATE_PROTOTYPE_2026.md",
+        "docs/execution/NR1_MVP_THREAT_MODEL_2026.md",
+        "docs/execution/NR1_MVP_WAVE1_PURE_CORE_EVIDENCE.md",
+        "src/lib/actions/actionExecutionCore.test.ts",
+        "src/lib/actions/actionExecutionCore.ts",
+        "src/lib/actions/actionCommandContract.test.ts",
+        "src/lib/actions/actionCommandContract.ts"
+      ]
+    },
+    {
+      "key": "release_governance",
+      "paths": [
+        ".github/workflows/ci.yml",
+        "docs/release/G1_PR_SCOPE_MANIFEST.json",
+        "bun.lock",
+        "bun.lockb",
+        "package-lock.json",
+        "package.json",
+        "scripts/audit-release-scope.mjs",
+        "scripts/audit-release-scope.selftest.mjs",
+        "scripts/check-ci-contract.mjs",
+        "src/integrations/supabase/types.ts",
+        "eslint.config.js",
+        "docs/execution/REACT_ROUTER_8_MIGRATION.md",
+        "src/App.tsx",
+        "src/components/app/AppShell.tsx",
+        "src/components/app/AuroraFloatingAssistant.tsx",
+        "src/components/app/EmptyState.tsx",
+        "src/components/app/JourneyStepper.tsx",
+        "src/components/app/nexo/NexoDriverIntelligenceCard.tsx",
+        "src/components/app/risk/DriverInsightCard.tsx",
+        "src/components/AppLayout.tsx",
+        "src/components/AuthGuard.tsx",
+        "src/components/DriverCard.tsx",
+        "src/components/governance/ExternalSessionDecisionCard.test.tsx",
+        "src/components/governance/ExternalSessionDecisionCard.tsx",
+        "src/components/NavLink.tsx",
+        "src/components/signup/SignupShell.tsx",
+        "src/components/ui/calendar.tsx",
+        "src/pages/app/ActionsPage.tsx",
+        "src/pages/app/CompanyPage.tsx",
+        "src/pages/app/ControlsPage.tsx",
+        "src/pages/app/CyclesPage.tsx",
+        "src/pages/app/DashboardPage.tsx",
+        "src/pages/app/EstrategiaPage.tsx",
+        "src/pages/app/ExternalReadinessWorkspacePage.test.tsx",
+        "src/pages/app/GovernancePage.tsx",
+        "src/pages/app/RiskPage.tsx",
+        "src/pages/AuthPage.tsx",
+        "src/pages/DriverWorldPage.tsx",
+        "src/pages/NotFound.tsx",
+        "src/pages/NR1CopsoqPage.tsx",
+        "src/pages/RespondPage.tsx",
+        "src/pages/signup/SignupCollaboratorPage.tsx",
+        "src/pages/signup/SignupIndexPage.tsx",
+        "src/pages/signup/SignupManagerPage.tsx",
+        "src/pages/signup/SignupSstPage.tsx",
+        "src/integrations/supabase/client.ts",
+        "src/test/supabaseClientRuntimeConfig.test.ts",
+        "src/hooks/AuthProvider.tsx",
+        "src/lib/runtime/supabaseConfig.test.ts",
+        "src/lib/runtime/supabaseConfig.ts",
+        "src/lib/signup.ts",
+        "docs/LOVABLE_DEPLOYMENT_RUNTIME_GUARD.md"
+      ]
+    }
+  ]
+}

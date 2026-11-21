@@ -1,0 +1,192 @@
+{
+  "manifestId": "g1-release-scope-manifest",
+  "version": "2026-07-15.1-observed",
+  "observedAt": "2026-07-15",
+  "expected": {
+    "totalFiles": 126,
+    "trackedModified": 23,
+    "untrackedFiles": 103,
+    "categories": {
+      "docs": 28,
+      "source": 95,
+      "e2e": 1,
+      "tooling": 2,
+      "other": 0
+    }
+  },
+  "contentHash": {
+    "algorithm": "sha256-path-null-file-sha256-v1",
+    "excludePaths": [
+      "docs/G1_RELEASE_SCOPE_AUDIT.md",
+      "docs/release/G1_RELEASE_SCOPE_MANIFEST.json"
+    ]
+  },
+  "reviewBudget": {
+    "excludePaths": [
+      "docs/G1_APPROVAL_PACKET.md",
+      "docs/G1_EVIDENCE_DOSSIER.md",
+      "docs/G1_RELEASE_CANDIDATE_CHARTER.md",
+      "docs/G1_RELEASE_REVIEW_SEQUENCE.md",
+      "docs/G1_RELEASE_SCOPE_AUDIT.md",
+      "docs/release/G1_RELEASE_SCOPE_MANIFEST.json"
+    ]
+  },
+  "workstreams": [
+    {
+      "key": "foundation_and_claims",
+      "paths": [
+        "docs/G1_PUBLIC_DEMO_READINESS.md",
+        "e2e/public-keyboard-and-demo.spec.ts",
+        "src/App.tsx",
+        "src/data/g1PublicDemoReadiness.ts",
+        "src/lib/governance/publicDemoReadiness.test.ts",
+        "src/test/publicClaimsGuardrail.test.ts"
+      ]
+    },
+    {
+      "key": "commercial_readiness",
+      "paths": [
+        "docs/DESIGN_PARTNER_OFFER_G1.md",
+        "docs/PAID_ADVISORY_AUTHORIZATION_G1.md",
+        "docs/PAID_ADVISORY_AUTHORIZATION_MEETING_G1.md",
+        "docs/PAID_ADVISORY_LAUNCH_REHEARSAL_G1.md",
+        "docs/governance/COMMERCIAL_READINESS_WAVE_G1.md",
+        "docs/governance/VENDOR_NEUTRAL_COMMERCIAL_DELIVERY_G1.md",
+        "src/components/governance/PaidAdvisoryAuthorizationCard.test.tsx",
+        "src/components/governance/PaidAdvisoryAuthorizationCard.tsx",
+        "src/components/governance/PaidAdvisoryAuthorizationMeetingPanel.tsx",
+        "src/components/governance/PaidAdvisoryLaunchRehearsalCard.test.tsx",
+        "src/components/governance/PaidAdvisoryLaunchRehearsalCard.tsx",
+        "src/components/sales/VendorDeliveryReadinessCard.tsx",
+        "src/data/g1DesignPartnerOffer.ts",
+        "src/data/g1PaidAdvisoryAuthorization.ts",
+        "src/data/g1PaidAdvisoryAuthorizationMeeting.ts",
+        "src/data/g1PaidAdvisoryLaunchRehearsal.ts",
+        "src/data/g1VendorDeliveryReadiness.ts",
+        "src/lib/commercial/commercialReadiness.test.ts",
+        "src/lib/commercial/commercialReadiness.ts",
+        "src/lib/commercial/designPartnerOffer.test.ts",
+        "src/lib/commercial/designPartnerOffer.ts",
+        "src/lib/commercial/paidAdvisoryAuthorization.test.ts",
+        "src/lib/commercial/paidAdvisoryAuthorization.ts",
+        "src/lib/commercial/paidAdvisoryAuthorizationMeeting.test.ts",
+        "src/lib/commercial/paidAdvisoryAuthorizationMeeting.ts",
+        "src/lib/commercial/paidAdvisoryLaunchRehearsal.test.ts",
+        "src/lib/commercial/paidAdvisoryLaunchRehearsal.ts",
+        "src/lib/commercial/vendorDeliveryReadiness.test.ts",
+        "src/lib/commercial/vendorDeliveryReadiness.ts",
+        "src/pages/SalesPage.tsx"
+      ]
+    },
+    {
+      "key": "methodology_and_instruments",
+      "paths": [
+        "docs/METHODOLOGY_READINESS_DOSSIER_G1.md",
+        "src/components/nr1/MethodologyReadinessDossier.tsx",
+        "src/data/g1CanonicalInstrumentIntake.ts",
+        "src/data/g1CanonicalPackageManifest.ts",
+        "src/data/instrumentMethodologyReadiness.ts",
+        "src/lib/instruments/methodologyDossier.test.ts",
+        "src/lib/instruments/methodologyDossier.ts",
+        "src/pages/NR1CopsoqPage.tsx"
+      ]
+    },
+    {
+      "key": "synthetic_operation",
+      "paths": [
+        "docs/DESIGN_PARTNER_SESSION_COCKPIT_G1.md",
+        "docs/G1_SYNTHETIC_DEMO_REHEARSAL.md",
+        "docs/SYNTHETIC_DEMO_RECEIPT_G1.md",
+        "docs/SYNTHETIC_DESIGN_PARTNER_RUNBOOK_G1.md",
+        "docs/SYNTHETIC_PILOTABILITY_WAVE_G1.md",
+        "src/components/nr1/DesignPartnerSessionPreflight.tsx",
+        "src/components/nr1/FacilitatorHandoffCard.tsx",
+        "src/components/nr1/SyntheticDemoFeedbackCard.tsx",
+        "src/components/nr1/SyntheticDemoReceiptCard.tsx",
+        "src/components/nr1/SyntheticScenarioSelector.tsx",
+        "src/data/g1DemoRehearsal.ts",
+        "src/data/g1DesignPartnerSession.ts",
+        "src/data/syntheticDemoScenarios.ts",
+        "src/lib/governance/demoRehearsal.test.ts",
+        "src/lib/governance/designPartnerSession.test.ts",
+        "src/lib/governance/designPartnerSession.ts",
+        "src/lib/governance/syntheticDemoFeedback.test.ts",
+        "src/lib/governance/syntheticDemoFeedback.ts",
+        "src/lib/instruments/syntheticDemoReceipt.test.ts",
+        "src/lib/instruments/syntheticDemoReceipt.ts",
+        "src/lib/instruments/syntheticScenarios.test.ts",
+        "src/lib/instruments/syntheticScenarios.ts"
+      ]
+    },
+    {
+      "key": "external_governance",
+      "paths": [
+        "docs/G1_ACCOUNTABLE_NOMINATION_PACK.md",
+        "docs/G1_APPROVAL_PACKET.md",
+        "docs/G1_EVIDENCE_DOSSIER.md",
+        "docs/G1_EXTERNAL_AUDIENCE_PACK.md",
+        "docs/G1_EXTERNAL_READINESS_CLOSURE_BOARD.md",
+        "docs/G1_EXTERNAL_READINESS_WORKSPACE.md",
+        "docs/G1_EXTERNAL_SESSION_DECISION_ROOM.md",
+        "docs/G1_FACILITATOR_REHEARSAL.md",
+        "docs/G1_FORMAL_ACCEPTANCE_LEDGER.md",
+        "src/components/governance/AccountableNominationPackCard.test.tsx",
+        "src/components/governance/AccountableNominationPackCard.tsx",
+        "src/components/governance/ExternalAudiencePackCard.test.tsx",
+        "src/components/governance/ExternalAudiencePackCard.tsx",
+        "src/components/governance/ExternalReadinessClosureBoard.test.tsx",
+        "src/components/governance/ExternalReadinessClosureBoard.tsx",
+        "src/components/governance/ExternalSessionDecisionCard.test.tsx",
+        "src/components/governance/ExternalSessionDecisionCard.tsx",
+        "src/components/governance/FacilitatorRehearsalCard.test.tsx",
+        "src/components/governance/FacilitatorRehearsalCard.tsx",
+        "src/data/g1AccountableNominationPack.ts",
+        "src/data/g1ExternalAudiencePack.ts",
+        "src/data/g1ExternalReadinessClosure.ts",
+        "src/data/g1ExternalReadinessWorkspace.test.ts",
+        "src/data/g1ExternalReadinessWorkspace.ts",
+        "src/data/g1ExternalSessionDecision.ts",
+        "src/data/g1FacilitatorRehearsal.ts",
+        "src/lib/governance/accountableNominationPack.test.ts",
+        "src/lib/governance/accountableNominationPack.ts",
+        "src/lib/governance/externalAudiencePack.test.ts",
+        "src/lib/governance/externalAudiencePack.ts",
+        "src/lib/governance/externalReadinessClosure.test.ts",
+        "src/lib/governance/externalReadinessClosure.ts",
+        "src/lib/governance/externalSessionDecision.test.ts",
+        "src/lib/governance/externalSessionDecision.ts",
+        "src/lib/governance/facilitatorRehearsal.test.ts",
+        "src/lib/governance/facilitatorRehearsal.ts",
+        "src/pages/app/ExternalReadinessWorkspacePage.test.tsx",
+        "src/pages/app/ExternalReadinessWorkspacePage.tsx",
+        "src/pages/app/GovernancePage.tsx"
+      ]
+    },
+    {
+      "key": "release_governance",
+      "paths": [
+        "docs/G1_RELEASE_CANDIDATE_CHARTER.md",
+        "docs/G1_RELEASE_PROOF_PACKET.md",
+        "docs/G1_RELEASE_REVIEW_SEQUENCE.md",
+        "docs/G1_RELEASE_SCOPE_AUDIT.md",
+        "docs/GITHUB_LOVABLE_SYNC_HANDOFF.md",
+        "docs/release/G1_RELEASE_SCOPE_MANIFEST.json",
+        "scripts/audit-release-scope.mjs",
+        "scripts/audit-release-scope.selftest.mjs",
+        "src/components/governance/ReleaseCandidateCharterCard.test.tsx",
+        "src/components/governance/ReleaseCandidateCharterCard.tsx",
+        "src/components/governance/ReleaseProofPacketCard.test.tsx",
+        "src/components/governance/ReleaseProofPacketCard.tsx",
+        "src/data/g1ReleaseCandidateCharter.ts",
+        "src/data/g1ReleaseProofPacket.ts",
+        "src/data/g1ReleaseReviewPlan.ts",
+        "src/lib/release/releaseCandidateCharter.test.ts",
+        "src/lib/release/releaseCandidateCharter.ts",
+        "src/lib/release/releaseProofPacket.test.ts",
+        "src/lib/release/releaseProofPacket.ts",
+        "src/lib/release/releaseReviewPlan.test.ts",
+        "src/lib/release/releaseReviewPlan.ts"
+      ]
+    }
+  ]
+}

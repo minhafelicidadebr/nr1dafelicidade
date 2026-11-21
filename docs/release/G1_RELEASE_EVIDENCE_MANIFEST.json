@@ -1,0 +1,180 @@
+{
+  "manifestId": "g1-release-evidence",
+  "version": "2026-07-20.4-current-published-baseline",
+  "observedAt": "2026-07-20T14:19:45Z",
+  "repository": {
+    "nameWithOwner": "minhafelicidadebr/playbook-nr1-chagpt-sol",
+    "defaultBranch": "main",
+    "publishedBaselineRef": "4a21c1c7eb9f756a216553fd5237809e588f90d9",
+    "sourceHeadRef": "6b482f75acfa662995e0deb5419bc587a75e8140"
+  },
+  "integration": {
+    "pullRequestNumber": 21,
+    "status": "merged",
+    "mergedAt": "2026-07-19T13:17:15Z",
+    "mergeCommitRef": "4a21c1c7eb9f756a216553fd5237809e588f90d9"
+  },
+  "ci": {
+    "provider": "github_actions",
+    "runId": 29688590447,
+    "runUrl": "https://github.com/minhafelicidadebr/playbook-nr1-chagpt-sol/actions/runs/29688590447",
+    "observedCommitRef": "4a21c1c7eb9f756a216553fd5237809e588f90d9",
+    "jobs": [
+      {
+        "key": "verify",
+        "status": "success",
+        "observedCommitRef": "4a21c1c7eb9f756a216553fd5237809e588f90d9",
+        "evidenceRef": "github-actions:run/29688590447#verify"
+      },
+      {
+        "key": "database-security",
+        "status": "success",
+        "observedCommitRef": "4a21c1c7eb9f756a216553fd5237809e588f90d9",
+        "evidenceRef": "github-actions:run/29688590447#database-security"
+      },
+      {
+        "key": "browser-quality",
+        "status": "success",
+        "observedCommitRef": "4a21c1c7eb9f756a216553fd5237809e588f90d9",
+        "evidenceRef": "github-actions:run/29688590447#browser-quality"
+      }
+    ]
+  },
+  "gates": {
+    "approvedGate": "G0",
+    "targetGate": "G1",
+    "g1Approved": false,
+    "gateAdvanceClaimed": false,
+    "realDataEnabled": false
+  },
+  "capabilities": {
+    "externalPublication": "blocked",
+    "billing": "sandbox_only",
+    "methodology": "blocked",
+    "formalAcceptance": "blocked",
+    "lovablePublishedBaseline": "verified"
+  },
+  "proofs": [
+    {
+      "key": "git_repository",
+      "label": "Repositório Git oficial",
+      "source": "local",
+      "status": "verified",
+      "requiresAttestedBaselineRef": false,
+      "evidenceRef": "github:repository/minhafelicidadebr/playbook-nr1-chagpt-sol",
+      "observedCommitRef": null,
+      "detail": "O clone local e o remoto apontam para o repositório oficial do Playbook NR-1.",
+      "nextAction": "Preservar o repositório e não publicar diretamente em main."
+    },
+    {
+      "key": "git_remote",
+      "label": "Remoto GitHub confirmado",
+      "source": "local",
+      "status": "verified",
+      "requiresAttestedBaselineRef": false,
+      "evidenceRef": "github:repository/minhafelicidadebr/playbook-nr1-chagpt-sol",
+      "observedCommitRef": null,
+      "detail": "O remoto origin foi confirmado antes do merge e permanece como fonte de integração.",
+      "nextAction": "Auditar qualquer mudança futura de owner, nome ou remoto."
+    },
+    {
+      "key": "working_tree_audit",
+      "label": "Escopo do PR auditado",
+      "source": "local",
+      "status": "verified",
+      "requiresAttestedBaselineRef": false,
+      "evidenceRef": "github-actions:run/29662588956#audit-pr-scope",
+      "observedCommitRef": "8b0c5464c6648d4a69369fa9857cc2918a9d7fab",
+      "detail": "A auditoria de escopo do candidato publicado foi preservada como evidência histórica complementar; o CI oficial do baseline atual é o run 29688590447.",
+      "nextAction": "Gerar um novo recibo para cada candidato posterior."
+    },
+    {
+      "key": "local_ci",
+      "label": "Matriz local da aplicação",
+      "source": "local",
+      "status": "verified",
+      "requiresAttestedBaselineRef": false,
+      "evidenceRef": "local-ci:8b0c546#475-tests+typecheck+lint+build+scope-audit",
+      "observedCommitRef": "8b0c5464c6648d4a69369fa9857cc2918a9d7fab",
+      "detail": "A matriz local da fatia registrou 475 testes, typecheck, lint, build, orçamento de bundle e auditoria de escopo verdes.",
+      "nextAction": "Manter a evidência local como complemento, não substituto da CI oficial."
+    },
+    {
+      "key": "github_app_ci",
+      "label": "GitHub Actions da aplicação",
+      "source": "github",
+      "status": "verified",
+      "requiresAttestedBaselineRef": true,
+      "evidenceRef": "github-actions:run/29688590447#verify",
+      "observedCommitRef": "4a21c1c7eb9f756a216553fd5237809e588f90d9",
+      "detail": "O job verify passou no merge commit observado em main.",
+      "nextAction": "Exigir novo run verde para qualquer novo candidato."
+    },
+    {
+      "key": "github_database_ci",
+      "label": "CI oficial de banco",
+      "source": "github",
+      "status": "verified",
+      "requiresAttestedBaselineRef": true,
+      "evidenceRef": "github-actions:run/29688590447#database-security",
+      "observedCommitRef": "4a21c1c7eb9f756a216553fd5237809e588f90d9",
+      "detail": "Migrations, lint SQL, pgTAP, concorrência e recuperação sintética passaram no merge commit.",
+      "nextAction": "Reexecutar o job se banco, policy, RPC ou Edge Function mudar."
+    },
+    {
+      "key": "github_browser_ci",
+      "label": "Matriz browser oficial",
+      "source": "github",
+      "status": "verified",
+      "requiresAttestedBaselineRef": true,
+      "evidenceRef": "github-actions:run/29688590447#browser-quality",
+      "observedCommitRef": "4a21c1c7eb9f756a216553fd5237809e588f90d9",
+      "detail": "A qualidade pública passou em Chromium, Firefox e WebKit no merge commit.",
+      "nextAction": "Exigir nova matriz se UI, rotas ou contratos E2E mudarem."
+    },
+    {
+      "key": "baseline_merge",
+      "label": "Baseline integrado em main",
+      "source": "github",
+      "status": "verified",
+      "requiresAttestedBaselineRef": true,
+      "evidenceRef": "github:pull/21#merged",
+      "observedCommitRef": "4a21c1c7eb9f756a216553fd5237809e588f90d9",
+      "detail": "O PR 21 foi mesclado em main; isso não promove G1 nem autoriza dados reais.",
+      "nextAction": "Tratar este SHA como baseline comprovado até um novo candidato passar pela mesma cadeia."
+    },
+    {
+      "key": "branch_protection",
+      "label": "Branch protection e revisão obrigatória",
+      "source": "github",
+      "status": "blocked",
+      "requiresAttestedBaselineRef": false,
+      "evidenceRef": "github-api:branch-protection/403-plan-restricted@2026-07-18",
+      "observedCommitRef": null,
+      "detail": "A proteção nativa de main continua não comprovada porque a API informa limitação do plano do repositório privado.",
+      "nextAction": "Definir controle equivalente verificável ou habilitar proteção suportada."
+    },
+    {
+      "key": "lovable_project_link",
+      "label": "Projeto Lovable vinculado",
+      "source": "lovable",
+      "status": "verified",
+      "requiresAttestedBaselineRef": false,
+      "evidenceRef": "docs/release/G1_LOVABLE_DEPLOYMENT_RECEIPT.json",
+      "observedCommitRef": null,
+      "detail": "O receipt versionado registra projeto, repositório oficial e branch main observados no Lovable.",
+      "nextAction": "Gerar novo receipt se projeto, repositório ou branch vinculada mudarem."
+    },
+    {
+      "key": "lovable_published_baseline",
+      "label": "Baseline publicado comprovado no Lovable",
+      "source": "lovable",
+      "status": "verified",
+      "requiresAttestedBaselineRef": true,
+      "evidenceRef": "docs/release/G1_LOVABLE_DEPLOYMENT_RECEIPT.json",
+      "observedCommitRef": "4a21c1c7eb9f756a216553fd5237809e588f90d9",
+      "detail": "Deployment, assets, marcador específico do release e smoke desktop/mobile atestam pontualmente o site público no baseline observado; não comprovam o HEAD atual.",
+      "nextAction": "Exigir novo receipt e novo smoke para atestar cada baseline publicado posteriormente."
+    }
+  ]
+}

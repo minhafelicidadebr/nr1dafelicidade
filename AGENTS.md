@@ -28,3 +28,8 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Migrated app rules
+- Pages under `src/pages` use `@/lib/router/compat` (react-router-style API over TanStack Router); route files in `src/routes` only wrap pages. Why: the app was migrated from react-router without rewriting 40+ call sites.
+- App data access goes through `@/lib/runtime/appSupabaseClient`, never the generated client directly. Why: it enforces the runtime data gate (synthetic mode blocks real data until governance approval).
+- The layout renders inside `<ClientOnly>` with `defaultSsr: false`. Why: pages read localStorage/theme during render.

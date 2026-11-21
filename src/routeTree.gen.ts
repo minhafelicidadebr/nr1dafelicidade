@@ -10,33 +10,412 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AppRouteImport } from './routes/app'
+import { Route as AuthRouteImport } from './routes/auth'
+import { Route as LibraryRouteImport } from './routes/library'
+import { Route as Nr1CopsoqRouteImport } from './routes/nr1-copsoq'
+import { Route as PerfilRouteImport } from './routes/perfil'
+import { Route as PlanoSaasRouteImport } from './routes/plano-saas'
+import { Route as PlanosRouteImport } from './routes/planos'
+import { Route as SobreRouteImport } from './routes/sobre'
+import { Route as AppIndexRouteImport } from './routes/app.index'
+import { Route as AppActionsRouteImport } from './routes/app.actions'
+import { Route as AppAetRouteImport } from './routes/app.aet'
+import { Route as AppCompanyRouteImport } from './routes/app.company'
+import { Route as AppControlsRouteImport } from './routes/app.controls'
+import { Route as AppCriteriaRouteImport } from './routes/app.criteria'
+import { Route as AppCyclesRouteImport } from './routes/app.cycles'
+import { Route as AppDocumentsRouteImport } from './routes/app.documents'
+import { Route as AppEstrategiaRouteImport } from './routes/app.estrategia'
+import { Route as AppRiskRouteImport } from './routes/app.risk'
+import { Route as AppUnitsRouteImport } from './routes/app.units'
+import { Route as AppWorkAnalysisRouteImport } from './routes/app.work-analysis'
+import { Route as DriversIndexRouteImport } from './routes/drivers.index'
+import { Route as DriversSlugRouteImport } from './routes/drivers.$slug'
+import { Route as RespondTokenRouteImport } from './routes/respond.$token'
+import { Route as SignupIndexRouteImport } from './routes/signup.index'
+import { Route as SignupCollaboratorRouteImport } from './routes/signup.collaborator'
+import { Route as SignupManagerRouteImport } from './routes/signup.manager'
+import { Route as SignupSstRouteImport } from './routes/signup.sst'
+import { Route as AppGovernanceIndexRouteImport } from './routes/app.governance.index'
+import { Route as AppGovernanceExternalReadinessRouteImport } from './routes/app.governance.external-readiness'
+import { Route as AppGovernanceTogafMacroWaveRouteImport } from './routes/app.governance.togaf-macro-wave'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AppRoute = AppRouteImport.update({
+  id: '/app',
+  path: '/app',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthRoute = AuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LibraryRoute = LibraryRouteImport.update({
+  id: '/library',
+  path: '/library',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Nr1CopsoqRoute = Nr1CopsoqRouteImport.update({
+  id: '/nr1-copsoq',
+  path: '/nr1-copsoq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PerfilRoute = PerfilRouteImport.update({
+  id: '/perfil',
+  path: '/perfil',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PlanoSaasRoute = PlanoSaasRouteImport.update({
+  id: '/plano-saas',
+  path: '/plano-saas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PlanosRoute = PlanosRouteImport.update({
+  id: '/planos',
+  path: '/planos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SobreRoute = SobreRouteImport.update({
+  id: '/sobre',
+  path: '/sobre',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppIndexRoute = AppIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppActionsRoute = AppActionsRouteImport.update({
+  id: '/actions',
+  path: '/actions',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppAetRoute = AppAetRouteImport.update({
+  id: '/aet',
+  path: '/aet',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppCompanyRoute = AppCompanyRouteImport.update({
+  id: '/company',
+  path: '/company',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppControlsRoute = AppControlsRouteImport.update({
+  id: '/controls',
+  path: '/controls',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppCriteriaRoute = AppCriteriaRouteImport.update({
+  id: '/criteria',
+  path: '/criteria',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppCyclesRoute = AppCyclesRouteImport.update({
+  id: '/cycles',
+  path: '/cycles',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppDocumentsRoute = AppDocumentsRouteImport.update({
+  id: '/documents',
+  path: '/documents',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppEstrategiaRoute = AppEstrategiaRouteImport.update({
+  id: '/estrategia',
+  path: '/estrategia',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppRiskRoute = AppRiskRouteImport.update({
+  id: '/risk',
+  path: '/risk',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppUnitsRoute = AppUnitsRouteImport.update({
+  id: '/units',
+  path: '/units',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppWorkAnalysisRoute = AppWorkAnalysisRouteImport.update({
+  id: '/work-analysis',
+  path: '/work-analysis',
+  getParentRoute: () => AppRoute,
+} as any)
+const DriversIndexRoute = DriversIndexRouteImport.update({
+  id: '/drivers/',
+  path: '/drivers/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DriversSlugRoute = DriversSlugRouteImport.update({
+  id: '/drivers/$slug',
+  path: '/drivers/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RespondTokenRoute = RespondTokenRouteImport.update({
+  id: '/respond/$token',
+  path: '/respond/$token',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SignupIndexRoute = SignupIndexRouteImport.update({
+  id: '/signup/',
+  path: '/signup/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SignupCollaboratorRoute = SignupCollaboratorRouteImport.update({
+  id: '/signup/collaborator',
+  path: '/signup/collaborator',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SignupManagerRoute = SignupManagerRouteImport.update({
+  id: '/signup/manager',
+  path: '/signup/manager',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SignupSstRoute = SignupSstRouteImport.update({
+  id: '/signup/sst',
+  path: '/signup/sst',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppGovernanceIndexRoute = AppGovernanceIndexRouteImport.update({
+  id: '/governance/',
+  path: '/governance/',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppGovernanceExternalReadinessRoute =
+  AppGovernanceExternalReadinessRouteImport.update({
+    id: '/governance/external-readiness',
+    path: '/governance/external-readiness',
+    getParentRoute: () => AppRoute,
+  } as any)
+const AppGovernanceTogafMacroWaveRoute =
+  AppGovernanceTogafMacroWaveRouteImport.update({
+    id: '/governance/togaf-macro-wave',
+    path: '/governance/togaf-macro-wave',
+    getParentRoute: () => AppRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/app': typeof AppRouteWithChildren
+  '/auth': typeof AuthRoute
+  '/library': typeof LibraryRoute
+  '/nr1-copsoq': typeof Nr1CopsoqRoute
+  '/perfil': typeof PerfilRoute
+  '/plano-saas': typeof PlanoSaasRoute
+  '/planos': typeof PlanosRoute
+  '/sobre': typeof SobreRoute
+  '/app/actions': typeof AppActionsRoute
+  '/app/aet': typeof AppAetRoute
+  '/app/company': typeof AppCompanyRoute
+  '/app/controls': typeof AppControlsRoute
+  '/app/criteria': typeof AppCriteriaRoute
+  '/app/cycles': typeof AppCyclesRoute
+  '/app/documents': typeof AppDocumentsRoute
+  '/app/estrategia': typeof AppEstrategiaRoute
+  '/app/risk': typeof AppRiskRoute
+  '/app/units': typeof AppUnitsRoute
+  '/app/work-analysis': typeof AppWorkAnalysisRoute
+  '/drivers/$slug': typeof DriversSlugRoute
+  '/respond/$token': typeof RespondTokenRoute
+  '/signup/collaborator': typeof SignupCollaboratorRoute
+  '/signup/manager': typeof SignupManagerRoute
+  '/signup/sst': typeof SignupSstRoute
+  '/app/': typeof AppIndexRoute
+  '/drivers/': typeof DriversIndexRoute
+  '/signup/': typeof SignupIndexRoute
+  '/app/governance/external-readiness': typeof AppGovernanceExternalReadinessRoute
+  '/app/governance/togaf-macro-wave': typeof AppGovernanceTogafMacroWaveRoute
+  '/app/governance/': typeof AppGovernanceIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/auth': typeof AuthRoute
+  '/library': typeof LibraryRoute
+  '/nr1-copsoq': typeof Nr1CopsoqRoute
+  '/perfil': typeof PerfilRoute
+  '/plano-saas': typeof PlanoSaasRoute
+  '/planos': typeof PlanosRoute
+  '/sobre': typeof SobreRoute
+  '/app/actions': typeof AppActionsRoute
+  '/app/aet': typeof AppAetRoute
+  '/app/company': typeof AppCompanyRoute
+  '/app/controls': typeof AppControlsRoute
+  '/app/criteria': typeof AppCriteriaRoute
+  '/app/cycles': typeof AppCyclesRoute
+  '/app/documents': typeof AppDocumentsRoute
+  '/app/estrategia': typeof AppEstrategiaRoute
+  '/app/risk': typeof AppRiskRoute
+  '/app/units': typeof AppUnitsRoute
+  '/app/work-analysis': typeof AppWorkAnalysisRoute
+  '/drivers/$slug': typeof DriversSlugRoute
+  '/respond/$token': typeof RespondTokenRoute
+  '/signup/collaborator': typeof SignupCollaboratorRoute
+  '/signup/manager': typeof SignupManagerRoute
+  '/signup/sst': typeof SignupSstRoute
+  '/app': typeof AppIndexRoute
+  '/drivers': typeof DriversIndexRoute
+  '/signup': typeof SignupIndexRoute
+  '/app/governance/external-readiness': typeof AppGovernanceExternalReadinessRoute
+  '/app/governance/togaf-macro-wave': typeof AppGovernanceTogafMacroWaveRoute
+  '/app/governance': typeof AppGovernanceIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/app': typeof AppRouteWithChildren
+  '/auth': typeof AuthRoute
+  '/library': typeof LibraryRoute
+  '/nr1-copsoq': typeof Nr1CopsoqRoute
+  '/perfil': typeof PerfilRoute
+  '/plano-saas': typeof PlanoSaasRoute
+  '/planos': typeof PlanosRoute
+  '/sobre': typeof SobreRoute
+  '/app/actions': typeof AppActionsRoute
+  '/app/aet': typeof AppAetRoute
+  '/app/company': typeof AppCompanyRoute
+  '/app/controls': typeof AppControlsRoute
+  '/app/criteria': typeof AppCriteriaRoute
+  '/app/cycles': typeof AppCyclesRoute
+  '/app/documents': typeof AppDocumentsRoute
+  '/app/estrategia': typeof AppEstrategiaRoute
+  '/app/risk': typeof AppRiskRoute
+  '/app/units': typeof AppUnitsRoute
+  '/app/work-analysis': typeof AppWorkAnalysisRoute
+  '/drivers/$slug': typeof DriversSlugRoute
+  '/respond/$token': typeof RespondTokenRoute
+  '/signup/collaborator': typeof SignupCollaboratorRoute
+  '/signup/manager': typeof SignupManagerRoute
+  '/signup/sst': typeof SignupSstRoute
+  '/app/': typeof AppIndexRoute
+  '/drivers/': typeof DriversIndexRoute
+  '/signup/': typeof SignupIndexRoute
+  '/app/governance/external-readiness': typeof AppGovernanceExternalReadinessRoute
+  '/app/governance/togaf-macro-wave': typeof AppGovernanceTogafMacroWaveRoute
+  '/app/governance/': typeof AppGovernanceIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/app'
+    | '/auth'
+    | '/library'
+    | '/nr1-copsoq'
+    | '/perfil'
+    | '/plano-saas'
+    | '/planos'
+    | '/sobre'
+    | '/app/actions'
+    | '/app/aet'
+    | '/app/company'
+    | '/app/controls'
+    | '/app/criteria'
+    | '/app/cycles'
+    | '/app/documents'
+    | '/app/estrategia'
+    | '/app/risk'
+    | '/app/units'
+    | '/app/work-analysis'
+    | '/drivers/$slug'
+    | '/respond/$token'
+    | '/signup/collaborator'
+    | '/signup/manager'
+    | '/signup/sst'
+    | '/app/'
+    | '/drivers/'
+    | '/signup/'
+    | '/app/governance/external-readiness'
+    | '/app/governance/togaf-macro-wave'
+    | '/app/governance/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/auth'
+    | '/library'
+    | '/nr1-copsoq'
+    | '/perfil'
+    | '/plano-saas'
+    | '/planos'
+    | '/sobre'
+    | '/app/actions'
+    | '/app/aet'
+    | '/app/company'
+    | '/app/controls'
+    | '/app/criteria'
+    | '/app/cycles'
+    | '/app/documents'
+    | '/app/estrategia'
+    | '/app/risk'
+    | '/app/units'
+    | '/app/work-analysis'
+    | '/drivers/$slug'
+    | '/respond/$token'
+    | '/signup/collaborator'
+    | '/signup/manager'
+    | '/signup/sst'
+    | '/app'
+    | '/drivers'
+    | '/signup'
+    | '/app/governance/external-readiness'
+    | '/app/governance/togaf-macro-wave'
+    | '/app/governance'
+  id:
+    | '__root__'
+    | '/'
+    | '/app'
+    | '/auth'
+    | '/library'
+    | '/nr1-copsoq'
+    | '/perfil'
+    | '/plano-saas'
+    | '/planos'
+    | '/sobre'
+    | '/app/actions'
+    | '/app/aet'
+    | '/app/company'
+    | '/app/controls'
+    | '/app/criteria'
+    | '/app/cycles'
+    | '/app/documents'
+    | '/app/estrategia'
+    | '/app/risk'
+    | '/app/units'
+    | '/app/work-analysis'
+    | '/drivers/$slug'
+    | '/respond/$token'
+    | '/signup/collaborator'
+    | '/signup/manager'
+    | '/signup/sst'
+    | '/app/'
+    | '/drivers/'
+    | '/signup/'
+    | '/app/governance/external-readiness'
+    | '/app/governance/togaf-macro-wave'
+    | '/app/governance/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AppRoute: typeof AppRouteWithChildren
+  AuthRoute: typeof AuthRoute
+  LibraryRoute: typeof LibraryRoute
+  Nr1CopsoqRoute: typeof Nr1CopsoqRoute
+  PerfilRoute: typeof PerfilRoute
+  PlanoSaasRoute: typeof PlanoSaasRoute
+  PlanosRoute: typeof PlanosRoute
+  SobreRoute: typeof SobreRoute
+  DriversSlugRoute: typeof DriversSlugRoute
+  RespondTokenRoute: typeof RespondTokenRoute
+  SignupCollaboratorRoute: typeof SignupCollaboratorRoute
+  SignupManagerRoute: typeof SignupManagerRoute
+  SignupSstRoute: typeof SignupSstRoute
+  DriversIndexRoute: typeof DriversIndexRoute
+  SignupIndexRoute: typeof SignupIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +427,274 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/app': {
+      id: '/app'
+      path: '/app'
+      fullPath: '/app'
+      preLoaderRoute: typeof AppRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/library': {
+      id: '/library'
+      path: '/library'
+      fullPath: '/library'
+      preLoaderRoute: typeof LibraryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/nr1-copsoq': {
+      id: '/nr1-copsoq'
+      path: '/nr1-copsoq'
+      fullPath: '/nr1-copsoq'
+      preLoaderRoute: typeof Nr1CopsoqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/perfil': {
+      id: '/perfil'
+      path: '/perfil'
+      fullPath: '/perfil'
+      preLoaderRoute: typeof PerfilRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/plano-saas': {
+      id: '/plano-saas'
+      path: '/plano-saas'
+      fullPath: '/plano-saas'
+      preLoaderRoute: typeof PlanoSaasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/planos': {
+      id: '/planos'
+      path: '/planos'
+      fullPath: '/planos'
+      preLoaderRoute: typeof PlanosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sobre': {
+      id: '/sobre'
+      path: '/sobre'
+      fullPath: '/sobre'
+      preLoaderRoute: typeof SobreRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/app/': {
+      id: '/app/'
+      path: '/'
+      fullPath: '/app/'
+      preLoaderRoute: typeof AppIndexRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/actions': {
+      id: '/app/actions'
+      path: '/actions'
+      fullPath: '/app/actions'
+      preLoaderRoute: typeof AppActionsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/aet': {
+      id: '/app/aet'
+      path: '/aet'
+      fullPath: '/app/aet'
+      preLoaderRoute: typeof AppAetRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/company': {
+      id: '/app/company'
+      path: '/company'
+      fullPath: '/app/company'
+      preLoaderRoute: typeof AppCompanyRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/controls': {
+      id: '/app/controls'
+      path: '/controls'
+      fullPath: '/app/controls'
+      preLoaderRoute: typeof AppControlsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/criteria': {
+      id: '/app/criteria'
+      path: '/criteria'
+      fullPath: '/app/criteria'
+      preLoaderRoute: typeof AppCriteriaRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/cycles': {
+      id: '/app/cycles'
+      path: '/cycles'
+      fullPath: '/app/cycles'
+      preLoaderRoute: typeof AppCyclesRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/documents': {
+      id: '/app/documents'
+      path: '/documents'
+      fullPath: '/app/documents'
+      preLoaderRoute: typeof AppDocumentsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/estrategia': {
+      id: '/app/estrategia'
+      path: '/estrategia'
+      fullPath: '/app/estrategia'
+      preLoaderRoute: typeof AppEstrategiaRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/risk': {
+      id: '/app/risk'
+      path: '/risk'
+      fullPath: '/app/risk'
+      preLoaderRoute: typeof AppRiskRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/units': {
+      id: '/app/units'
+      path: '/units'
+      fullPath: '/app/units'
+      preLoaderRoute: typeof AppUnitsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/work-analysis': {
+      id: '/app/work-analysis'
+      path: '/work-analysis'
+      fullPath: '/app/work-analysis'
+      preLoaderRoute: typeof AppWorkAnalysisRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/drivers/': {
+      id: '/drivers/'
+      path: '/drivers'
+      fullPath: '/drivers/'
+      preLoaderRoute: typeof DriversIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/drivers/$slug': {
+      id: '/drivers/$slug'
+      path: '/drivers/$slug'
+      fullPath: '/drivers/$slug'
+      preLoaderRoute: typeof DriversSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/respond/$token': {
+      id: '/respond/$token'
+      path: '/respond/$token'
+      fullPath: '/respond/$token'
+      preLoaderRoute: typeof RespondTokenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/signup/': {
+      id: '/signup/'
+      path: '/signup'
+      fullPath: '/signup/'
+      preLoaderRoute: typeof SignupIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/signup/collaborator': {
+      id: '/signup/collaborator'
+      path: '/signup/collaborator'
+      fullPath: '/signup/collaborator'
+      preLoaderRoute: typeof SignupCollaboratorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/signup/manager': {
+      id: '/signup/manager'
+      path: '/signup/manager'
+      fullPath: '/signup/manager'
+      preLoaderRoute: typeof SignupManagerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/signup/sst': {
+      id: '/signup/sst'
+      path: '/signup/sst'
+      fullPath: '/signup/sst'
+      preLoaderRoute: typeof SignupSstRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/app/governance/': {
+      id: '/app/governance/'
+      path: '/governance'
+      fullPath: '/app/governance/'
+      preLoaderRoute: typeof AppGovernanceIndexRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/governance/external-readiness': {
+      id: '/app/governance/external-readiness'
+      path: '/governance/external-readiness'
+      fullPath: '/app/governance/external-readiness'
+      preLoaderRoute: typeof AppGovernanceExternalReadinessRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/governance/togaf-macro-wave': {
+      id: '/app/governance/togaf-macro-wave'
+      path: '/governance/togaf-macro-wave'
+      fullPath: '/app/governance/togaf-macro-wave'
+      preLoaderRoute: typeof AppGovernanceTogafMacroWaveRouteImport
+      parentRoute: typeof AppRoute
+    }
   }
 }
 
+interface AppRouteChildren {
+  AppActionsRoute: typeof AppActionsRoute
+  AppAetRoute: typeof AppAetRoute
+  AppCompanyRoute: typeof AppCompanyRoute
+  AppControlsRoute: typeof AppControlsRoute
+  AppCriteriaRoute: typeof AppCriteriaRoute
+  AppCyclesRoute: typeof AppCyclesRoute
+  AppDocumentsRoute: typeof AppDocumentsRoute
+  AppEstrategiaRoute: typeof AppEstrategiaRoute
+  AppRiskRoute: typeof AppRiskRoute
+  AppUnitsRoute: typeof AppUnitsRoute
+  AppWorkAnalysisRoute: typeof AppWorkAnalysisRoute
+  AppIndexRoute: typeof AppIndexRoute
+  AppGovernanceExternalReadinessRoute: typeof AppGovernanceExternalReadinessRoute
+  AppGovernanceTogafMacroWaveRoute: typeof AppGovernanceTogafMacroWaveRoute
+  AppGovernanceIndexRoute: typeof AppGovernanceIndexRoute
+}
+
+const AppRouteChildren: AppRouteChildren = {
+  AppActionsRoute: AppActionsRoute,
+  AppAetRoute: AppAetRoute,
+  AppCompanyRoute: AppCompanyRoute,
+  AppControlsRoute: AppControlsRoute,
+  AppCriteriaRoute: AppCriteriaRoute,
+  AppCyclesRoute: AppCyclesRoute,
+  AppDocumentsRoute: AppDocumentsRoute,
+  AppEstrategiaRoute: AppEstrategiaRoute,
+  AppRiskRoute: AppRiskRoute,
+  AppUnitsRoute: AppUnitsRoute,
+  AppWorkAnalysisRoute: AppWorkAnalysisRoute,
+  AppIndexRoute: AppIndexRoute,
+  AppGovernanceExternalReadinessRoute: AppGovernanceExternalReadinessRoute,
+  AppGovernanceTogafMacroWaveRoute: AppGovernanceTogafMacroWaveRoute,
+  AppGovernanceIndexRoute: AppGovernanceIndexRoute,
+}
+
+const AppRouteWithChildren = AppRoute._addFileChildren(AppRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AppRoute: AppRouteWithChildren,
+  AuthRoute: AuthRoute,
+  LibraryRoute: LibraryRoute,
+  Nr1CopsoqRoute: Nr1CopsoqRoute,
+  PerfilRoute: PerfilRoute,
+  PlanoSaasRoute: PlanoSaasRoute,
+  PlanosRoute: PlanosRoute,
+  SobreRoute: SobreRoute,
+  DriversSlugRoute: DriversSlugRoute,
+  RespondTokenRoute: RespondTokenRoute,
+  SignupCollaboratorRoute: SignupCollaboratorRoute,
+  SignupManagerRoute: SignupManagerRoute,
+  SignupSstRoute: SignupSstRoute,
+  DriversIndexRoute: DriversIndexRoute,
+  SignupIndexRoute: SignupIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
